@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .f {
+      width: 200px;
+      height: 200px;
+      background-color: grey;
+      position: fixed;
+      overflow: hidden;
+    }
+
+    .s {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s linear;
+    }
+    .s:hover {
+      opacity: 1;
+      transition: opacity 0s linear;
+      transition-delay: -5s;
+    }
+    
+
+    .change {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="f" id = "f" style = "width: 100%;height: 300px;">
+  </div>
+  <div class="s" id = "s" style = "width: 100px; height: 100px;" ><button>Sou um botao</button></div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="f" id = "f" style = "width: 100%;height: 300px;">
+</div>
+<div class="s" id = "s" style = "width: 100px; height: 100px;" ><button>Sou um botao</button></div>
+  <script>
+    const s = $('.s')
+    const f = $('.f')
+    const oTop = f.offset().top + (s.height() / 2) + 40;
+    const oLeft = f.offset().left + (s.width() / 2) - 40;
+
+    f.hover(function () {
+      s.toggleClass('change')
+    })
+
+    f.mousemove(function (e) {
+      var x = e.pageY - oTop
+      var y = e.pageX - oLeft
+
+      s.css({
+        top: x + 'px',
+        left: y + 'px'
+      })
+    })
+  </script>
+</body>
+
+</html>

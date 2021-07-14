@@ -1,0 +1,258 @@
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.text-secondary-color{
+  color: limegreen;
+}
+
+
+.fotoPerfil {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.fotoFundo {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.overFotoZoom{
+  color: black;
+  font-size: 20px;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.containerFotoPerfil{
+  width: 200px;
+  height: 250px;
+}
+.containerFotoFundo{
+  height: 250px;
+}
+
+
+.containerFotoPerfil:hover .fotoPerfil, 
+.containerFotoFundo:hover .fotoFundo {
+  opacity: 0.4;
+}
+
+.containerFotoPerfil:hover .overFotoZoom,
+.containerFotoFundo:hover .overFotoZoom {
+  opacity: 1;
+}
+
+
+.closeImageZoom {
+  position: absolute;
+  top: 2em;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+
+.closeImageZoom:hover,
+.closeImageZoom:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalFotoZoom{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+
+.modal-content-fotoZoom {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+
+#caption-fotoZoom {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  font-size: 20px;
+  padding: 10px 0;
+  height: 150px;
+}
+
+
+/* Add Animation */
+.modal-content-fotoZoom, #caption-fotoZoom {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+
+
+
+#notification {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  right: 1%;
+  top: 5.5em;
+  font-size: 17px;
+}
+
+#notification.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+
+  to {
+    top: 5.5em;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+
+  to {
+    top: 5.5em;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 5.5em;
+    opacity: 1;
+  }
+
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 5.5em;
+    opacity: 1;
+  }
+
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+
+#div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+}
+
+.mandarParaCima{
+	top:15%; left: 50%; position: absolute; transform: translateX(-50%) !important;
+}
+
+
+.mandarParaBaixo{
+	top: 47%;  left: 50%; position: absolute; transform: translate(-50%, -50%) !important;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none !important;
+}
+
+.rowDaNavBar{
+  color: #bbb ;
+}
+
+.rowDaNavBar:hover{
+  opacity: 0.7;
+}
+
+.rowDaNavBar:active{
+  opacity: 0.5;
+}
+
+.rowDaNavBar.active{
+  color: #333 ;
+}

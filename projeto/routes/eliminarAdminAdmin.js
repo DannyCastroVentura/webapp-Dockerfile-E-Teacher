@@ -1,0 +1,25 @@
+const fetch = require("node-fetch");
+
+module.exports = (app) => {
+
+    app.post("/eliminarAdminAdmin", (req, res, next) => {
+        console.log("eliminar admin")
+        const email = req.body.email;
+        const body = JSON.stringify({ email: email });
+        console.log(body);
+        return fetch(`http://serverapi:8080/FinalProject/admin`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "DELETE",
+          body: body
+        }).then((response) => {
+          console.log("a verificar se tem erro...");
+          return response.json();
+        }).then((response) => {
+          console.log(response);
+          res.status(200).send({ message: true });
+        });
+
+    });
+}
