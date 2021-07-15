@@ -20,7 +20,7 @@
         .service('AllOrientacoesService', AllOrientacoesService)
         .service('AllRecursosDigitaisService', AllRecursosDigitaisService)
         .service('AllLogsService', AllLogsService)
-        .constant('ApiBasePath', "http://" + sessionStorage.getItem("E-Teacher Location Host") + ":8080/FinalProject")
+        .constant('ApiBasePath', "http://localhost:8080/FinalProject")
         .directive('loading', ['$http', function ($http) {
             return {
                 restrict: 'A',
