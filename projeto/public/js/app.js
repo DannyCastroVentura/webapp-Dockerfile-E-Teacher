@@ -1,9 +1,6 @@
 (() => {
     'use strict';
 
-    const locationHost = location.host.split(":");
-    sessionStorage.setItem("E-Teacher Location Host", locationHost[0]);
-
     let fetching = false;
 
     angular.module('UsersApp', [])
