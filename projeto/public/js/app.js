@@ -1,8 +1,6 @@
 (() => {
     'use strict';
 
-    const locationHost = location.host.split(":");
-    sessionStorage.setItem("E-Teacher Location Host", locationHost[0]);
 
     let fetching = false;
 
@@ -19,7 +17,7 @@
         .service('AllOrientacoesService', AllOrientacoesService)
         .service('AllRecursosDigitaisService', AllRecursosDigitaisService)
         .service('AllLogsService', AllLogsService)
-        .constant('ApiBasePath', "http://" + sessionStorage.getItem("E-Teacher Location Host") + ":8080/FinalProject")
+        .constant('ApiBasePath', "http://locahost:8080/FinalProject")
         .directive('loading', ['$http', function ($http) {
             return {
                 restrict: 'A',
