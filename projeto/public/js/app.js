@@ -19,8 +19,7 @@
         .service('AllOrientacoesService', AllOrientacoesService)
         .service('AllRecursosDigitaisService', AllRecursosDigitaisService)
         .service('AllLogsService', AllLogsService)
-        .constant('ApiBasePath', "http://" + sessionStorage.getItem("E-Teacher Location Host") + ":8080/FinalProject")
-        //.constant('ApiBasePath', "https://e-teacher-db.loca.lt/FinalProject");
+        .constant('ApiBasePath', "http://serverapi:8080/FinalProject")
         .directive('loading', ['$http', function ($http) {
             return {
                 restrict: 'A',
