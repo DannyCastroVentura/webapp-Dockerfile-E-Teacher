@@ -2942,9 +2942,9 @@
                 }
 
                 async function awaitCriarConta(email, user, nome, password, confirmPassword, email, divErro, mensagemDeErro, email, nome, password, confirmPassword, numeroAluno) {
-                    if(numeroAluno !== undefined){
+                    if (numeroAluno !== undefined) {
                         await criarConta(email.value, user, nome.value, numeroAluno.value);
-                    }else{
+                    } else {
                         await criarConta(email.value, user, nome.value);
                     }
                     password.style.borderColor = "#ced4da";
@@ -2956,7 +2956,7 @@
                     nome.value = "";
                     password.value = "";
                     confirmPassword.value = "";
-                    if(numeroAluno !== undefined){                        
+                    if (numeroAluno !== undefined) {
                         numeroAluno.value = "";
                     }
                 }
@@ -3742,6 +3742,14 @@
                     while (traduzir[i] != undefined) {
                         const pt = traduzir[i].getAttribute("pt");
                         traduzir[i].innerText = pt;
+                        i++;
+                    }
+
+
+                    const traduzirTitle = document.getElementsByClassName("traduzirTitle");
+                    i = 0;
+                    while (traduzirTitle[i] != undefined) {
+                        traduzirTitle[i].title = "Deve conter pelo menos um número e uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres.";
                         i++;
                     }
                 }

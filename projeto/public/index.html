@@ -5169,6 +5169,14 @@
             traduzir[i].innerText = pt;
             i++;
           }
+
+          
+          const traduzirTitle = document.getElementsByClassName("traduzirTitle");
+          i = 0;
+          while (traduzirTitle[i] != undefined) {
+            traduzirTitle[i].title = "Deve conter pelo menos um número e uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres.";
+            i++;
+          }
         }
       </script>
     </body>
