@@ -1,5 +1,5 @@
 # webapp - E-Teacher web application server
-That's where everything happens, from registering accounts, logging in, changing profile to the admin page.
+That's where everything happens, from registering accounts, logging in, changing your profile to the admin page.
 
 It's from here that the user will interact with the project.
 
