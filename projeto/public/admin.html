@@ -1376,14 +1376,18 @@
                                                     eng="Name">Name</label>
                                             </div>
                                             <div class="form-floating">
-                                                <input type="password" class="form-control" id="passwordSigninTeacher"
+                                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                    class="form-control traduzirTitle" id="passwordSigninTeacher"
                                                     style="margin-bottom: 0px;" placeholder="Password" required>
                                                 <label for="passwordSigninTeacher" class="traduzir" pt="Palavra-passe"
                                                     eng="Password">Password</label>
                                             </div>
                                             <div class="form-floating">
-                                                <input type="password" class="form-control"
-                                                    id="confirmPasswordSigninTeacher" placeholder="Password" required>
+                                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                    class="form-control traduzirTitle" id="confirmPasswordSigninTeacher"
+                                                    placeholder="Password" required>
                                                 <label for="confirmPasswordSigninTeacher" class="traduzir"
                                                     pt="Confirmar palavra-passe" eng="Confirm password">Confirm
                                                     Password</label>
@@ -1431,14 +1435,18 @@
                                                     pt="Número de aluno" eng="Student number">Student number</label>
                                             </div>
                                             <div class="form-floating">
-                                                <input type="password" class="form-control" id="passwordSigninStudent"
+                                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                    class="form-control traduzirTitle" id="passwordSigninStudent"
                                                     style="margin-bottom: 0px;" placeholder="Password" required>
                                                 <label for="passwordSigninStudent" class="traduzir" pt="Palavra-passe"
                                                     eng="Password">Password</label>
                                             </div>
                                             <div class="form-floating">
-                                                <input type="password" class="form-control"
-                                                    id="confirmPasswordSigninStudent" placeholder="Password" required>
+                                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                    class="form-control traduzirTitle" id="confirmPasswordSigninStudent"
+                                                    placeholder="Password" required>
                                                 <label for="confirmPasswordSigninStudent" class="traduzir"
                                                     pt="Confirmar palavra-passe" eng="Confirm password">Confirm
                                                     Password</label>
@@ -1479,14 +1487,18 @@
                                                     eng="Name">Name</label>
                                             </div>
                                             <div class="form-floating">
-                                                <input type="password" class="form-control" id="passwordSigninAdmin"
+                                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                    class="form-control traduzirTitle" id="passwordSigninAdmin"
                                                     style="margin-bottom: 0px;" placeholder="Password" required>
                                                 <label for="passwordSigninAdmin" class="traduzir" pt="Palavra-passe"
                                                     eng="Password">Password</label>
                                             </div>
                                             <div class="form-floating">
-                                                <input type="password" class="form-control"
-                                                    id="confirmPasswordSigninAdmin" placeholder="Password" required>
+                                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                    class="form-control traduzirTitle" id="confirmPasswordSigninAdmin"
+                                                    placeholder="Password" required>
                                                 <label for="confirmPasswordSigninAdmin" class="traduzir"
                                                     pt="Confirmar palavra-passe" eng="Confirm password">Confirm
                                                     Password</label>
@@ -2585,10 +2597,11 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr ng-repeat="log in profile.logsAdmin | filter : searchBarLogs"
-                                                    onclick = "openInfoLog(this);" admin = "{{log.email}}" updateType = "{{log.tipoDeAlteracao}}"
-                                                    table = "{{log.tabela}}" recordUpdated = "{{log.idRegisto}}" recordFinalState = "{{log.estadoFinal}}"
-                                                    data = "{{log.dateTime}}"
-                                                    id="logsAdminMostrarTR{{log.idLog}}" idLog = "{{log.idLog}}" >
+                                                        onclick="openInfoLog(this);" admin="{{log.email}}"
+                                                        updateType="{{log.tipoDeAlteracao}}" table="{{log.tabela}}"
+                                                        recordUpdated="{{log.idRegisto}}"
+                                                        recordFinalState="{{log.estadoFinal}}" data="{{log.dateTime}}"
+                                                        id="logsAdminMostrarTR{{log.idLog}}" idLog="{{log.idLog}}">
                                                         <td scope="row" class="mostrarEmail">{{ log.email }}
                                                         </td>
                                                         <td scope="row">{{ log.tipoDeAlteracao }}</td>
@@ -2771,16 +2784,7 @@
                                 }
                                 return response.json();
                             }).then((response) => {
-                                criarConta(email.value, user, nome.value);
-                                password.style.borderColor = "#ced4da";
-                                confirmPassword.style.borderColor = "#ced4da";
-                                email.style.borderColor = "#ced4da";
-                                document.getElementById("divErroSigninTeacher").style.display = "none";
-                                document.getElementById("mensagemDeErroSigninTeacher").innerText = "";
-                                email.value = "";
-                                nome.value = "";
-                                password.value = "";
-                                confirmPassword.value = "";
+                                awaitCriarConta(email, user, nome, password, confirmPassword, email, "divErroSigninTeacher", "mensagemDeErroSigninTeacher", email, nome, password, confirmPassword);
                             });
                         } else {
                             //mostrar mensagem de erro a dizer que as passwords precisam ser iguais
@@ -2845,17 +2849,7 @@
                                 }
                                 return response.json();
                             }).then((response) => {
-                                criarConta(email.value, user, nome.value, numeroDeAluno.value);
-                                password.style.borderColor = "#ced4da";
-                                confirmPassword.style.borderColor = "#ced4da";
-                                email.style.borderColor = "#ced4da";
-                                document.getElementById("divErroSigninStudent").style.display = "none";
-                                document.getElementById("mensagemDeErroSigninStudent").innerText = "";
-                                numeroDeAluno.value = "";
-                                email.value = "";
-                                nome.value = "";
-                                password.value = "";
-                                confirmPassword.value = "";
+                                awaitCriarConta(email, user, nome, password, confirmPassword, email, "divErroSigninTeacher", "mensagemDeErroSigninTeacher", email, nome, password, confirmPassword, numeroDeAluno);
                             });
                         } else {
                             //mostrar mensagem de erro a dizer que as passwords precisam ser iguais
@@ -2918,16 +2912,7 @@
                                 }
                                 return response.json();
                             }).then((response) => {
-                                criarConta(email.value, user, nome.value);
-                                password.style.borderColor = "#ced4da";
-                                confirmPassword.style.borderColor = "#ced4da";
-                                email.style.borderColor = "#ced4da";
-                                document.getElementById("divErroSigninAdmin").style.display = "none";
-                                document.getElementById("mensagemDeErroSigninAdmin").innerText = "";
-                                email.value = "";
-                                nome.value = "";
-                                password.value = "";
-                                confirmPassword.value = "";
+                                awaitCriarConta(email, user, nome, password, confirmPassword, email, "divErroSigninTeacher", "mensagemDeErroSigninTeacher", email, nome, password, confirmPassword);
                             });
                         } else {
                             //mostrar mensagem de erro a dizer que as passwords precisam ser iguais
@@ -2956,6 +2941,25 @@
                     }
                 }
 
+                async function awaitCriarConta(email, user, nome, password, confirmPassword, email, divErro, mensagemDeErro, email, nome, password, confirmPassword, numeroAluno) {
+                    if(numeroAluno !== undefined){
+                        await criarConta(email.value, user, nome.value, numeroAluno.value);
+                    }else{
+                        await criarConta(email.value, user, nome.value);
+                    }
+                    password.style.borderColor = "#ced4da";
+                    confirmPassword.style.borderColor = "#ced4da";
+                    email.style.borderColor = "#ced4da";
+                    document.getElementById(divErro).style.display = "none";
+                    document.getElementById(mensagemDeErro).innerText = "";
+                    email.value = "";
+                    nome.value = "";
+                    password.value = "";
+                    confirmPassword.value = "";
+                    if(numeroAluno !== undefined){                        
+                        numeroAluno.value = "";
+                    }
+                }
 
                 function registerInstitution() {
                     const sigla = document.getElementById("siglaRegisterInstitution");

@@ -348,7 +348,8 @@
                       <div class="dropdown-divider" ng-if="profile.permissions == 2"></div>
                       <div class="rowDaNavBar">
                         <a id="callChangePassword" style="color: black;" onclick="callChangePassword();"
-                          class="nav-link navBarETeacher traduzir" aria-current="page" href="#" eng = "Change password" pt = "Alterar palavra&#8209;passe">Change password</a>
+                          class="nav-link navBarETeacher traduzir" aria-current="page" href="#" eng="Change password"
+                          pt="Alterar palavra&#8209;passe">Change password</a>
                       </div>
                       <div class="dropdown-divider"></div>
                       <div class="rowDaNavBar">
@@ -429,8 +430,9 @@
                             address</label>
                         </div>
                         <div class="form-floating">
-                          <input type="password" class="form-control" id="passwordLoginIndex" placeholder="Password"
-                            required>
+                          <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                            class="form-control traduzirTitle" id="passwordLoginIndex" placeholder="Password" required>
                           <label for="passwordLoginIndex" class="traduzir" pt="Palavra-passe"
                             eng="Password">Password</label>
                         </div>
@@ -470,8 +472,7 @@
                       Verification</h1>
 
                     <div class="w3-container" style="padding:1em;">
-                      <span class="traduzir"
-                        pt="Clique no link enviado para o seu email para ativar a sua conta!"
+                      <span class="traduzir" pt="Clique no link enviado para o seu email para ativar a sua conta!"
                         eng="Click on the link sent to your email to activate your account!">Click on the link sent to
                         your email to activate your
                         account!</span>
@@ -514,14 +515,16 @@
                           <label for="nameSignin" class="traduzir" pt="Nome" eng="Name">Name</label>
                         </div>
                         <div class="form-floating">
-                          <input type="password" class="form-control" id="passwordSinginIndex" placeholder="Password"
-                            required>
+                          <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                            class="form-control traduzirTitle" id="passwordSinginIndex" placeholder="Password" required>
                           <label for="passwordSingin" class="traduzir" pt="Palavra-passe"
                             eng="Password">Password</label>
                         </div>
                         <div class="form-floating" style="margin-bottom: 1.5em;">
-                          <input type="password" class="form-control" id="confirmPasswordSigninIndex"
-                            placeholder="Password" required>
+                          <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                            class="form-control traduzirTitle" id="confirmPasswordSigninIndex" placeholder="Password" required>
                           <label for="confirmPasswordSignin" class="traduzir" pt="Confirmar palavra-passe"
                             eng="Confirm password" id="confirmPasswordSigninIndexLabel">Confirm Password</label>
                         </div>
@@ -625,14 +628,17 @@
                           eng="Old Password">Old Password</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" class="form-control" id="resetPasswordPasswordUser"
-                          placeholder="Password" required>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          class="form-control traduzirTitle" id="resetPasswordPasswordUser" placeholder="Password" required>
                         <label for="resetPasswordPasswordUser" class="traduzir" pt="Palavra-passe"
                           eng="Password">Password</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" style="margin-bottom: 1.5em;" class="form-control"
-                          id="resetPasswordConfirmPasswordUser" placeholder="Confirm Password" required>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          style="margin-bottom: 1.5em;" class="form-control traduzirTitle" id="resetPasswordConfirmPasswordUser"
+                          placeholder="Confirm Password" required>
                         <label for="resetPasswordConfirmPasswordUser" class="traduzir" pt="Confirmar palavra-passe"
                           eng="Confirm password">Confirm Password</label>
                       </div>
@@ -677,20 +683,24 @@
                           eng="Email address">Email</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" class="form-control" id="createPasswordOldPasswordUser"
-                          placeholder="Old Password" required>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          class="form-control traduzirTitle" id="createPasswordOldPasswordUser" placeholder="Old Password" required>
                         <label for="createPasswordOldPasswordUser" class="traduzir" pt="Palavra-passe antiga"
                           eng="Old Password">Old Password</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" class="form-control" id="createPasswordPasswordUser"
-                          placeholder="Password" required>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          class="form-control traduzirTitle" id="createPasswordPasswordUser" placeholder="Password" required>
                         <label for="createPasswordPasswordUser" class="traduzir" pt="Palavra-passe"
                           eng="Password">Password</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" style="margin-bottom: 1.5em;" class="form-control"
-                          id="createPasswordConfirmPasswordUser" placeholder="Confirm Password" required>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          style="margin-bottom: 1.5em;" class="form-control traduzirTitle" id="createPasswordConfirmPasswordUser"
+                          placeholder="Confirm Password" required>
                         <label for="createPasswordConfirmPasswordUser" class="traduzir" pt="Confirmar palavra-passe"
                           eng="Confirm password">Confirm Password</label>
                       </div>
@@ -741,14 +751,17 @@
                           eng="Received Code">Received Code</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" class="form-control" id="createPasswordPassword" placeholder="Password"
-                          required>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          class="form-control traduzirTitle" id="createPasswordPassword" placeholder="Password" required>
                         <label for="createPasswordPassword" class="traduzir" pt="Palavra-passe"
                           eng="Password">Password</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" style="margin-bottom: 1.5em;" class="form-control"
-                          id="createPasswordConfirmPassword" placeholder="Confirm Password" required>
+                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          style="margin-bottom: 1.5em;" class="form-control traduzirTitle" id="createPasswordConfirmPassword"
+                          placeholder="Confirm Password" required>
                         <label for="createPasswordConfirmPassword" class="traduzir" pt="Confirmar palavra-passe"
                           eng="Confirm password">Confirm Password</label>
                       </div>
@@ -805,12 +818,15 @@
                       <label for="nameSignin" class="traduzir" pt="Nome" eng="Name">Name</label>
                     </div>
                     <div class="form-floating">
-                      <input type="password" class="form-control" id="passwordSingin" placeholder="Password" required>
+                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        class="form-control traduzirTitle" id="passwordSingin" placeholder="Password" required>
                       <label for="passwordSingin" class="traduzir" pt="Palavra-passe" eng="Password">Password</label>
                     </div>
                     <div class="form-floating" style="margin-top:-1em;">
-                      <input type="password" class="form-control" id="confirmPasswordSignin" placeholder="Password"
-                        required>
+                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        class="form-control traduzirTitle" id="confirmPasswordSignin" placeholder="Password" required>
                       <label for="confirmPasswordSignin" class="traduzir" pt="Confirmar palavra-passe"
                         eng="Confirm password">Confirm Password</label>
                     </div>
@@ -844,8 +860,7 @@
                 </h1>
 
                 <div class="w3-container" style="padding:1em;">
-                  <span class="traduzir"
-                    pt="Clique no link enviado para o seu email para ativar a sua conta!"
+                  <span class="traduzir" pt="Clique no link enviado para o seu email para ativar a sua conta!"
                     eng="Click on the link sent to your email to activate your account!">Click on the link sent to your
                     email to activate your
                     account!</span>
@@ -883,13 +898,15 @@
                 </nav>
                 <div class="border border-top-0 container p-4" style="max-width: 300px;background-color: white;">
                   <div style="max-width: 275px;">
-                    <div class="form-floating" style = "margin-bottom: 1px;">
+                    <div class="form-floating" style="margin-bottom: 1px;">
                       <input type="email" class="form-control" id="emailLogin" placeholder="name@example.com" required>
                       <label for="emailLogin" class="traduzir" pt="Endereço de email" eng="Email address">Email
                         address</label>
                     </div>
                     <div class="form-floating">
-                      <input type="password" class="form-control" id="passwordLogin" placeholder="Password" required>
+                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        class="form-control traduzirTitle" id="passwordLogin" placeholder="Password" required>
                       <label for="passwordLogin" class="traduzir" pt="Palavra-passe" eng="Password">Password</label>
                     </div>
                     <div id="divErroLogin" style="display: none;">
