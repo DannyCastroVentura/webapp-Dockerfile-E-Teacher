@@ -385,7 +385,7 @@
             });
         }
 
-
+        //searchProfile
         profile.searchProfile = (emailProfile) => {
             if (sessionStorage.getItem('E-Teacher User Tipo') != "admin")
                 setQueryStringParameter('searchUserProfile', emailProfile);
@@ -622,6 +622,7 @@
 
         };
 
+        //viewMyProfile
         profile.viewMyProfile = () => {
             if (sessionStorage.getItem('E-Teacher User Email') !== null) {
 
@@ -1383,59 +1384,59 @@
 
             }
 
-            const promiseGetAllInstituicoes = AllInstituicoesService.getAllInstituicoes();
-            promiseGetAllInstituicoes.then((response) => {
+            
+        }const promiseGetAllInstituicoes = AllInstituicoesService.getAllInstituicoes();
+        promiseGetAllInstituicoes.then((response) => {
+            profile.AllInstituicoes = response.data.instituicao;
+        });
+
+        const promiseGetAllDisciplinas = AllDisciplinasService.getAllDisciplinas();
+        promiseGetAllDisciplinas.then((response) => {
+            profile.AllDisciplinas = response.data.disciplinas;
+        });
+
+        profile.reloadAllInstituicoes = () => {
+            const promiseGetAllInstituicoesNoReload = AllInstituicoesService.getAllInstituicoes();
+            promiseGetAllInstituicoesNoReload.then((response) => {
                 profile.AllInstituicoes = response.data.instituicao;
             });
+        };
 
-            const promiseGetAllDisciplinas = AllDisciplinasService.getAllDisciplinas();
-            promiseGetAllDisciplinas.then((response) => {
+        profile.reloadAllDisciplinas = () => {
+            const promiseGetAllDisciplinasNoReload = AllDisciplinasService.getAllDisciplinas();
+            promiseGetAllDisciplinasNoReload.then((response) => {
                 profile.AllDisciplinas = response.data.disciplinas;
             });
+        };
 
-            profile.reloadAllInstituicoes = () => {
-                const promiseGetAllInstituicoesNoReload = AllInstituicoesService.getAllInstituicoes();
-                promiseGetAllInstituicoesNoReload.then((response) => {
-                    profile.AllInstituicoes = response.data.instituicao;
-                });
-            };
-
-            profile.reloadAllDisciplinas = () => {
-                const promiseGetAllDisciplinasNoReload = AllDisciplinasService.getAllDisciplinas();
-                promiseGetAllDisciplinasNoReload.then((response) => {
-                    profile.AllDisciplinas = response.data.disciplinas;
-                });
-            };
-
-            profile.reloadAllAreas = () => {
-                const promiseGetAllAreasNoReload = AllAreasService.getAllAreas();
-                promiseGetAllAreasNoReload.then((response) => {
-                    profile.allAreas = response.data.areas;
-                });
-            };
-
-            const promiseGetAllArea = AllAreasService.getAllAreas();
-            promiseGetAllArea.then((response) => {
+        profile.reloadAllAreas = () => {
+            const promiseGetAllAreasNoReload = AllAreasService.getAllAreas();
+            promiseGetAllAreasNoReload.then((response) => {
                 profile.allAreas = response.data.areas;
-                if (sessionStorage.getItem("E-Teacher Idioma") === "pt") {
-                    profile.allAreas.push({ idArea: 0, nome: 'Vazio', cor: '' });
-                } else if (sessionStorage.getItem("E-Teacher Idioma") === "en") {
-                    profile.allAreas.push({ idArea: 0, nome: 'None', cor: '' });
-                }
-                profile.allAreas.forEach((area, index) => {
-                    if (profile.idArea == area.idArea) {
-                        profile.areaCor = area.cor;
-                        profile.areaNome = area.nome;
-                    }
-                });
             });
+        };
 
-            profile.reloadRecursosDigitais = () => {
-                const promiseGetAllRecursosDigitaisDoProfessorNoReload = AllRecursosDigitaisService.getRecursosDigitaisDoProfessor(profile.profileEmail);
-                promiseGetAllRecursosDigitaisDoProfessorNoReload.then((response) => {
-                    profile.recursosDigitais = response.data.professores[0].recursosDigitais;
-                });
+        const promiseGetAllArea = AllAreasService.getAllAreas();
+        promiseGetAllArea.then((response) => {
+            profile.allAreas = response.data.areas;
+            if (sessionStorage.getItem("E-Teacher Idioma") === "pt") {
+                profile.allAreas.push({ idArea: 0, nome: 'Vazio', cor: '' });
+            } else if (sessionStorage.getItem("E-Teacher Idioma") === "en") {
+                profile.allAreas.push({ idArea: 0, nome: 'None', cor: '' });
             }
+            profile.allAreas.forEach((area, index) => {
+                if (profile.idArea == area.idArea) {
+                    profile.areaCor = area.cor;
+                    profile.areaNome = area.nome;
+                }
+            });
+        });
+
+        profile.reloadRecursosDigitais = () => {
+            const promiseGetAllRecursosDigitaisDoProfessorNoReload = AllRecursosDigitaisService.getRecursosDigitaisDoProfessor(profile.profileEmail);
+            promiseGetAllRecursosDigitaisDoProfessorNoReload.then((response) => {
+                profile.recursosDigitais = response.data.professores[0].recursosDigitais;
+            });
         }
 
     }
