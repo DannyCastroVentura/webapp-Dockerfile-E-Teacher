@@ -419,8 +419,22 @@
                         profile.exp = "";
                     }
                     profile.idArea = profile.profileForEmail[0].idArea;
-                    profile.orcidId = profile.profileForEmail[0].orcidId;
                     profile.resumo = profile.profileForEmail[0].resumo;
+
+                    
+                    if (profile.idArea === 0) {
+                        profile.areaProfile = [{ "cor": "#0d6efd", "nome": "", "idArea": 0 }];
+                        profile.areaCor = "";
+                        profile.areaNome = "";
+                    } else {                        
+                        profile.allAreas.forEach((area, index) => {
+                            if (profile.idArea == area.idArea) {
+                                profile.areaCor = area.cor;
+                                profile.areaNome = area.nome;
+                            }
+                        });
+                    }
+
                     const year = new Date().getFullYear();
                     profile.years = year - response.data.professores[0].exp;
                     if (response.data.professores[0].exp == 0) {
@@ -709,8 +723,20 @@
                         profile.exp = "";
                     }
                     profile.idArea = profile.profileForEmail[0].idArea;
-                    profile.orcidId = profile.profileForEmail[0].orcidId;
                     profile.resumo = profile.profileForEmail[0].resumo;
+
+                    if (profile.idArea === 0) {
+                        profile.areaProfile = [{ "cor": "#0d6efd", "nome": "", "idArea": 0 }];
+                        profile.areaCor = "";
+                        profile.areaNome = "";
+                    } else {                        
+                        profile.allAreas.forEach((area, index) => {
+                            if (profile.idArea == area.idArea) {
+                                profile.areaCor = area.cor;
+                                profile.areaNome = area.nome;
+                            }
+                        });
+                    }
 
                     const year = new Date().getFullYear();
                     profile.years = year - response.data.professores[0].exp;
@@ -937,8 +963,6 @@
                         profile.exp = "";
                     }
                     profile.idArea = profile.profileForEmail[0].idArea;
-                    profile.orcidId = profile.profileForEmail[0].orcidId;
-                    profile.orcidIdInputValue = profile.orcidId;
                     profile.resumo = profile.profileForEmail[0].resumo;
 
                     const year = new Date().getFullYear();
@@ -1061,11 +1085,6 @@
                         return instituicoes;
                     });
                 });
-
-                profile.alterarOrcidId = (orcidId) => {
-                    profile.orcidId = orcidId;
-                    $scope.$apply();
-                };
 
 
                 profile.MudarFoto = (ondeE, url) => {
