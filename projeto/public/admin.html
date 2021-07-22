@@ -617,9 +617,7 @@
                                                 class="traduzir" pt="Breve resumo" eng="Brief summary">Brief summary</b>
                                         </h6>
                                         <p ng-if="profile.resumo" class="lead my-2 mb-auto"
-                                            style="white-space: pre-wrap;">
-                                            {{
-                                            profile.resumo }}</p>
+                                            style="white-space: pre-wrap;">{{ profile.resumo }}</p>
                                     </div>
                                 </div>
 
@@ -3782,6 +3780,26 @@
                         angular.element(document.querySelector('html')).scope().profile.reloadAllLogs();
                     });
                 }
+
+
+
+                // profile
+                function fotoZoom(tipo) {
+                    const modal = document.getElementById("fotoZoom");
+                    const modalImg = document.getElementById("fotoZoomed");
+                    const captionText = document.getElementById("caption-fotoZoom");
+                    if (tipo == "perfil") {
+                        // alteracoes para a foto de perfil
+                        modalImg.src = document.getElementById("fotoPerfilOriginal").src;
+                        captionText.innerText = document.getElementById("fotoPerfilOriginal").alt;
+                    } else {
+                        // alteracoes para a foto de fundo
+                        modalImg.src = document.getElementById("fotoFundoOriginal").src;
+                        captionText.innerText = document.getElementById("fotoFundoOriginal").alt;
+                    }
+                    modal.style.display = "block";
+                }
+
 
             </script>
 
