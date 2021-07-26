@@ -3,7 +3,7 @@ That's where everything happens, from registering accounts, logging in, changing
 
 It's from here that the user will interact with the project.
 
-Running this image will cause the web application server to run on your computer's port 3000.
+Run this image in port 3000 and the name "webapp".
 
 We used Node.js for server-side and in the client-side we used Angular.js and Bootstrap.
 
