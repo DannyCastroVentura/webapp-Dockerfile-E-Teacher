@@ -3,7 +3,6 @@
 
     const locationHost = location.host.split(":");
     sessionStorage.setItem("E-Teacher Location Host", locationHost[0]);
-    console.log(sessionStorage.getItem("E-Teacher Location Host"));
 
     let fetching = false;
 
