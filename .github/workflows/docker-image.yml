@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build -t webapp:1.0 .
     - name: Push the Docker image
-      run: docker push dannycastroventura/webapp:latest
+      run: docker push webapp:1.0
