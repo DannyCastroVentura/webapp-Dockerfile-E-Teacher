@@ -21,6 +21,6 @@ jobs:
       run:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build -t webapp:1.0 .
+      run: docker build -t dannycastroventura/webapp:latest .
     - name: Push the Docker image
-      run: docker push webapp:1.0
+      run: docker push dannycastroventura/webapp:latest
